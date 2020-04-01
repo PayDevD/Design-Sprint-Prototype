@@ -1,0 +1,32 @@
+.grid-container {
+  display: grid;
+  align-content: flex-start;
+  grid-template-columns: 25% 25% 50% ;
+  grid-template-rows: 70% 30%;
+  grid-gap: 0px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+h3 {
+  text-align: center;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  font-size:2vw;
+  border: solid black 1px;
+}
+
+table {
+  width:100%;
+  font-size:1.5vw;
+}
+.classPlan{
+  display: grid;
+  grid-template-columns: 80% 10% ;
+  grid-template-rows: auto;
+  grid-gap: 0px;
+}
+section{
+
+}

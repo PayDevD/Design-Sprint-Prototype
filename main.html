@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>수강신청</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./jquery-3.4.1.js"></script>
 </head>
 <body>
-    <!-- 수강 신청 메인 페이지 -->
-    <!-- 신청 가능한 과목과 그에 따른 시간표 등 메인 페이지에 보여야 할 화면 -->
+
+  <div class="grid-container">
+    <div class="completeList">
+      <h3>수강 완료 목록</h3>
+      <div class="lists">
+        <ul>
+          <li>논리회로</li>
+          <li>데이터베이스</li>
+          <li>동적으로 추가</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wishList">
+      <h3>수강 희망 목록</h3>
+      <table id="tblWish">
+        <tr>
+          <th>우선순위</th>
+          <th>강좌명</th>
+        </tr>
+        <tr>
+          <td>동적</td>
+          <td>으로</td>
+        </tr>
+        <tr>
+          <td>너비</td>
+          <td>조정</td>
+        </tr>
+      </table>
+      <form>
+        <input type="button" value="목록에서 제거">
+        <input type="submit" value="시간표 보기">
+      </form>
+    </div>
+    <div class="availableList">
+      <h3>수강 가능 목록</h3>
+      <table id="classInfo">
+        <tr>
+          <th>강좌명</th>
+          <th>시간</th>
+          <th>담당교수</th>
+          <th>학점</th>
+        </tr>
+        <tr>
+          <td>동적</td>
+          <td>으로</td>
+          <td>추가</td>
+          <td>해야</td>
+        </tr>
+      </table>
+    </div>
+    <div class="creditHave">
+      <table id="tblCreditHave">
+        <tr>
+          <td>일반선택</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>전공기초</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>전공심화</td>
+          <td>72</td>
+        </tr>
+      </table>
+    </div>
+    <div class="creditWish">
+      <table id="tblCreditWish">
+        <tr>
+          <td>일반선택</td>
+          <td>0/6</td>
+        </tr>
+        <tr>
+          <td>전공기초</td>
+          <td>3/6</td>
+        </tr>
+        <tr>
+          <td>전공심화</td>
+          <td>0/12</td>
+        </tr>
+      </table>
+    </div>
+    <div class="classPlan">
+      <div id="planArea">
+      <section>
+        <h6>학습 목표</h6>
+        <p>이 과목에서는...</p>
+      </section>
+      <section>
+        <h6>평가</h6>
+        <p>출석 10, 과제 30,..</p>
+      </section>
+    </div>
+    <div id="buttonArea">
+      <form>
+        <input type="button" value="신청">
+      </form>
+    </div>
+    </div>
+  </div>
+
+  <script src="./active.js"></script>
 </body>
 </html>
