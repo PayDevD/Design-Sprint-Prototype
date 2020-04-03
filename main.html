@@ -27,18 +27,10 @@
           <th>우선순위</th>
           <th>강좌명</th>
         </tr>
-        <tr>
-          <td>동적</td>
-          <td>으로</td>
-        </tr>
-        <tr>
-          <td>너비</td>
-          <td>조정</td>
-        </tr>
       </table>
       <form>
-        <input type="button" value="목록에서 제거">
-        <input type="submit" value="시간표 보기">
+        <input id="removeButton" type="button" value="목록에서 제거">
+        <input id="timeTableButton" type="button" value="시간표 보기">
       </form>
     </div>
     <div class="availableList">
@@ -50,11 +42,29 @@
           <th>담당교수</th>
           <th>학점</th>
         </tr>
-        <tr>
-          <td>동적</td>
-          <td>으로</td>
-          <td>추가</td>
-          <td>해야</td>
+        <tr id="class1">
+          <td>데이터통신</td>
+          <td>화14:00~16:00, 목17:00~18:00</td>
+          <td>김상하</td>
+          <td>전공심화 3</td>
+        </tr>
+        <tr id="class2">
+          <td>운영체제및실습</td>
+          <td>월10:00~12:00, 수10:00~12:00</td>
+          <td>권택근</td>
+          <td>전공심화 3</td>
+        </tr>
+        <tr id="class3">
+          <td>웹프로그래밍</td>
+          <td>수15:00~17:00, 금15:00~17:00</td>
+          <td>유정연</td>
+          <td>전공심화 3</td>
+        </tr>
+        <tr id="class4">
+          <td>프로그래밍언어개론</td>
+          <td>화12:00~13:00, 수09:00~10:00, 수13:00~15:00</td>
+          <td>정상근</td>
+          <td>전공심화 3</td>
         </tr>
       </table>
     </div>
@@ -82,11 +92,11 @@
         </tr>
         <tr>
           <td>전공기초</td>
-          <td>3/6</td>
+          <td>0/6</td>
         </tr>
         <tr>
           <td>전공심화</td>
-          <td>0/12</td>
+          <td><span id="majorCredit">0</span>/12</td>
         </tr>
       </table>
     </div>
@@ -103,7 +113,7 @@
     </div>
     <div id="buttonArea">
       <form>
-        <input type="button" value="신청">
+        <input id="applyButton" type="button" value="신청">
       </form>
     </div>
     </div>
