@@ -13,7 +13,7 @@ timeTableButton.onclick = () => {
 
 applyButton.onclick = () => {
     console.log("신청");
-    location.href = "timeTable.html";
+    location.href = "result.html";
 }
 
 // 희망 과목 선택 확인용 flag
