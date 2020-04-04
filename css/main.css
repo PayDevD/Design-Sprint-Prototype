@@ -23,6 +23,8 @@ div.contentArea{
   font-size:2vw;
   border: none ;
   overflow: scroll;
+  padding: 0;
+  margin: 0;
 }
 div.buttonArea {
   float: left;
