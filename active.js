@@ -4,8 +4,18 @@ const timeTableButton = document.getElementById("timeTableButton");
 let priority = 0;
 let selectedPriority = 0;
 const tblWish = document.getElementById("tblWish");
+/**
+$(document).ready(function(){
 
+  let list = {};
+  for(itr = 0 ; itr < list.length; itr++){
+    let temp = document.createElement('li');
+    temp.innerHTML = itr;
 
+  }
+
+})
+**/
 tblWish.innerHTML += `<tr id=0>\
       <td>0</td>\
       <td>데이터과학</td>\
@@ -18,7 +28,7 @@ timeTableButton.onclick = () => {
   window.open("./timeTable.html");
 };
 /*
- 시간표 보기와 신청이 일치하는 case를 prototype으로 잡고 
+ 시간표 보기와 신청이 일치하는 case를 prototype으로 잡고
 같은 html문서로 이동하도록 함
 */
 
@@ -28,9 +38,9 @@ let lectureName = "";
 for (let i = 1; i < 14; i++) {
   const lecture = document.getElementById(`class${i}`);
   lecture.onclick = () => {
-    document.getElementById("plan").innerText = "수업목표 : .....할 수 있다.";
+    document.getElementById("plan").innerText = "에서는 ...할 수 있다.";
     document.getElementById("evaluation").innerText =
-      "평가 :  출석 10 / 과제 30 / 중간고사(지필평가) 30 / 기말고사(프로젝트) 30";
+      "출석 10 / 과제 30 / 중간고사(지필평가) 30 / 기말고사(프로젝트) 30";
     flags[i - 1] = 1;
     order = i;
     lectureName = lecture.childNodes[1].innerText;
@@ -159,7 +169,7 @@ document.getElementById("upButton").onclick = () => {
 
     selectedPriority--;
     wishListSorting();
-    
+
   }
 };
 
@@ -170,7 +180,7 @@ document.getElementById("downButton").onclick = () => {
   if(typeof document.getElementById(selectedPriority + 1) !== "undefined" && selectedPriority !== 0) {
     original.removeAttribute("id");
     changed.removeAttribute("id");
-    
+
     original.setAttribute("id", selectedPriority + 1);
     changed.setAttribute("id", selectedPriority);
 
@@ -227,4 +237,22 @@ document.getElementById("removeButton").onclick = () => {
       }
     }
   }
+}
+document.getElementById("save").onclick = () => {
+
+  alert("변경 내역이 저장되었습니다.");
+
+}
+document.getElementById("exit").onclick = () => {
+
+  let result;
+  if(confirm("수강 희망 과목에 대한 수강 실패 시, "
+          +"부족한 학점에 대해 수강 가능 과목을 랜덤으로 신청하시겠습니까?")){
+            alert("수강 랜덤 신청 기능이 활성화 되었습니다.");
+          } else {
+            alert("수강 랜덤 신청 기능이 비활성화 되었습니다.")
+          }
+  window.location.href="./login.html";
+
+
 }
