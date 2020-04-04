@@ -15,7 +15,7 @@ timeTableButton.onclick = () => {
 let flag = 0;
 applyButton.onclick = () => {
 
-  if (flag === 0) {
+  if (flag5 === 1) {
     // WishList 추가
     priority++;
     document.getElementById("tblWish").innerHTML +=
@@ -26,6 +26,8 @@ applyButton.onclick = () => {
     // 학점 추가
     document.getElementById("majorCredit").innerHTML =
       Number(document.getElementById("majorCredit").innerText) + 3;
+
+    flag5 = 0;
   }
   document.getElementById("plan").innerText = "";
   document.getElementById("evaluation").innerText = "";
@@ -41,8 +43,7 @@ document.getElementById("class5").onclick = () => {
     document.getElementById("evaluation").innerText = 
     "평가 :  출석 10 / 과제 30 / 중간고사(지필평가) 30 / 기말고사(프로젝트) 30";
     flag5 = 1;
-  }
-};
+}
 
 document.getElementById("class1").onclick = () => {
 
