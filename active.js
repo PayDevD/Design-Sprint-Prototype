@@ -10,7 +10,8 @@ tblWish.innerHTML += `<tr id=0>\
       <td>0</td>\
       <td>데이터과학</td>\
       </tr>`;
-
+document.getElementById("majorCredit").innerHTML =
+  Number(document.getElementById("majorCredit").innerText) + 3;
 
 timeTableButton.onclick = () => {
   console.log("시간표 보기");
@@ -179,5 +180,51 @@ document.getElementById("downButton").onclick = () => {
     selectedPriority++;
     wishListSorting();
 
+  }
+}
+
+document.getElementById("removeButton").onclick = () => {
+  if(selectedPriority === 0) {
+    tblWish.removeChild(document.getElementById(0));
+    document.getElementById("majorCredit").innerHTML =
+        Number(document.getElementById("majorCredit").innerText) - 3;
+  }
+  else {
+    let lectureName = document.getElementById(selectedPriority).childNodes[3].innerText;
+    switch(lectureName) {
+      case "종합설계1":
+      case "데이터과학":
+      case "컴퓨터특강":
+      case "데이터베이스 설계":
+      case "데이터통신":
+      case "운영체제및실습":
+      case "웹프로그래밍":
+      case "프로그래밍언어개론":
+        document.getElementById("majorCredit").innerHTML =
+        Number(document.getElementById("majorCredit").innerText) - 3;
+        break;
+      case "이산수학":
+        document.getElementById("baseCredit").innerHTML =
+        Number(document.getElementById("baseCredit").innerText) - 3;
+        break;
+      case "서양 철학의 이해":
+      case "거시 경제학":
+      case "효과적인 의사소통":
+        document.getElementById("normalCredit").innerHTML =
+        Number(document.getElementById("normalCredit").innerText) - 3;
+        break;
+
+    }
+    tblWish.removeChild(document.getElementById(selectedPriority));
+    priority--;
+
+    for(let i = selectedPriority + 1; i < 13; i++) {
+      let node = document.getElementById(i);
+      if(typeof node !== "undefined") {
+        node.removeAttribute("id");
+        node.setAttribute("id", i - 1);
+        node.childNodes[1].innerText = i - 1;
+      }
+    }
   }
 }
