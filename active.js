@@ -4,6 +4,14 @@ const timeTableButton = document.getElementById("timeTableButton");
 let priority = 0;
 let selectedPriority = 0;
 const tblWish = document.getElementById("tblWish");
+
+
+tblWish.innerHTML += `<tr id=0>\
+      <td>0</td>\
+      <td>데이터과학</td>\
+      </tr>`;
+
+
 timeTableButton.onclick = () => {
   console.log("시간표 보기");
   window.open("./timeTable.html");
