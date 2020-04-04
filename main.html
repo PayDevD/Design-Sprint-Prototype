@@ -9,34 +9,50 @@
 </head>
 <body>
 
+  <header>
+    <p> 학년 : 4 | 학번 : 201711111 |
+      이름 :홍길동 | 학과 : 컴퓨터공학과 | 트랙 : 주전공 </p>
+  </header>
+
   <div class="grid-container">
-    <div class="completeList">
+
+    <section>
       <h3>수강 완료 목록</h3>
-      <div class="lists">
+      <div class="contentArea">
         <ul>
           <li>논리회로</li>
           <li>데이터베이스</li>
           <li>동적으로 추가</li>
         </ul>
       </div>
-    </div>
-    <div class="wishList">
+    </section>
+
+    <section>
+
       <h3>수강 희망 목록</h3>
-      <table id="tblWish">
-        <tr>
-          <th>우선순위</th>
-          <th>강좌명</th>
-        </tr>
-      </table>
-      <form>
-        <input id="removeButton" type="button" value="목록에서 제거">
-        <input id="timeTableButton" type="button" value="시간표 보기">
-        <input id="upButton" type="button" value="위"> 
-        <input id="downButton" type="button" value="아래">
-      </form>
-    </div>
-    <div class="availableList">
+
+      <div class="contentArea">
+        <table id="tblWish">
+          <tr>
+            <th>우선순위</th>
+            <th>강좌명</th>
+          </tr>
+        </table>
+      </div>
+
+      <div class="buttonArea">
+        <form>
+          <input id="removeButton" type="button" value="목록에서 제거">
+          <input id="timeTableButton" type="button" value="시간표 보기">
+          <input id="upButton" type="button" value="위">
+          <input id="downButton" type="button" value="아래">
+        </form>
+      <div>
+    </section>
+
+    <section>
       <h3>수강 가능 목록</h3>
+
       <table id="classInfo">
         <tr>
           <th>강좌명</th>
@@ -137,8 +153,10 @@
           <td>정상근</td>
         </tr>
       </table>
-    </div>
-    <div class="creditHave">
+
+    </section>
+
+    <section>
       <table id="tblCreditHave">
         <tr>
           <td>일반선택</td>
@@ -153,8 +171,9 @@
           <td>72</td>
         </tr>
       </table>
-    </div>
-    <div class="creditWish">
+    </section>
+
+    <section>
       <table id="tblCreditWish">
         <tr>
           <td>일반선택</td>
@@ -169,25 +188,25 @@
           <td><span id="majorCredit">0</span>/12</td>
         </tr>
       </table>
-    </div>
-    <div class="classPlan">
-      <div id="planArea">
-      <section>
+    </section>
+
+    <section>
+      <div class="contentArea">
         <h6>학습 목표</h6>
         <p>이 과목에서는...</p>
         <p id="plan"></p>
-      </section>
-      <section>
+
         <h6>평가</h6>
         <p id="evaluation"></p>
-      </section>
-    </div>
-    <div id="buttonArea">
-      <form>
-        <input id="applyButton" type="button" value="신청">
-      </form>
-    </div>
-    </div>
+      </div>
+      <div class="buttonArea">
+        <form>
+          <input id="applyButton" type="button" value="신청">
+        </form>
+      </div>
+
+    </section>
+
   </div>
 
   <script src="./active.js"></script>
