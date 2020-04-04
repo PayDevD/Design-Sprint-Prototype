@@ -80,9 +80,6 @@ applyButton.onclick = () => {
     case 7:
     case 8:
     case 9:
-      priority++;
-      document.getElementById("normalCredit").innerHTML =
-        Number(document.getElementById("normalCredit").innerText) + 3;
       if (document.getElementById("normalCredit").innerText >= 6) {
         alert("일반 선택 학점 초과!");
         break;
@@ -91,6 +88,9 @@ applyButton.onclick = () => {
         alert("이미 수강 희망하는 과목!");
         break;
       }
+      priority++;
+      document.getElementById("normalCredit").innerHTML =
+        Number(document.getElementById("normalCredit").innerText) + 3;
       tblWish.innerHTML += `<tr id=${priority}>\
       <td>${priority}</td>\
       <td>${lectureName}</td>\
@@ -124,9 +124,52 @@ applyButton.onclick = () => {
 
 const wishListSorting = () => {
   for(let i = 0; i < 13; i++) {
-    if(document.getElementById(i) !== undefined) {
+    if(typeof document.getElementById(i) !== "undefined") {
       tblWish.appendChild(document.getElementById(i));
+      document.getElementById(i).onclick = () => {
+        selectedPriority = i;
+      }
     }
   }
 }
-document.getElementById("upButton").onlick = () => {};
+
+
+document.getElementById("upButton").onclick = () => {
+  let original = document.getElementById(selectedPriority);
+  let changed = document.getElementById(selectedPriority - 1);
+
+  if(selectedPriority > 1 && selectedPriority !== 0) {
+    original.removeAttribute("id");
+    changed.removeAttribute("id");
+
+    original.setAttribute("id", selectedPriority - 1);
+    changed.setAttribute("id", selectedPriority);
+
+    original.childNodes[1].innerText = selectedPriority - 1;
+    changed.childNodes[1].innerText = selectedPriority;
+
+    selectedPriority--;
+    wishListSorting();
+    
+  }
+};
+
+document.getElementById("downButton").onclick = () => {
+  let original = document.getElementById(selectedPriority);
+  let changed = document.getElementById(selectedPriority + 1);
+
+  if(typeof document.getElementById(selectedPriority + 1) !== "undefined" && selectedPriority !== 0) {
+    original.removeAttribute("id");
+    changed.removeAttribute("id");
+    
+    original.setAttribute("id", selectedPriority + 1);
+    changed.setAttribute("id", selectedPriority);
+
+    original.childNodes[1].innerText = selectedPriority + 1;
+    changed.childNodes[1].innerText = selectedPriority;
+
+    selectedPriority++;
+    wishListSorting();
+
+  }
+}
