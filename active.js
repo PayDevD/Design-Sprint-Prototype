@@ -7,7 +7,7 @@ const tblWish = document.getElementById("tblWish");
 /**
 $(document).ready(function(){
 
-  let list = {서양 철학의 이해, 거시 경제학, 글로벌 영어, 이산수학, 선형대수, 논리회로, 효과적인 의사소통};
+  let list = {};
   for(itr = 0 ; itr < list.length; itr++){
     let temp = document.createElement('li');
     temp.innerHTML = itr;
@@ -37,10 +37,8 @@ let flags = [];
 let lectureName = "";
 for (let i = 1; i < 14; i++) {
   const lecture = document.getElementById(`class${i}`);
-
   lecture.onclick = () => {
-    let lectureName = lecture.childNodes[1].text;
-    document.getElementById("plan").innerText = lectureName+"에서는 ...할 수 있다.";
+    document.getElementById("plan").innerText = "에서는 ...할 수 있다.";
     document.getElementById("evaluation").innerText =
       "출석 10 / 과제 30 / 중간고사(지필평가) 30 / 기말고사(프로젝트) 30";
     flags[i - 1] = 1;
@@ -239,4 +237,22 @@ document.getElementById("removeButton").onclick = () => {
       }
     }
   }
+}
+document.getElementById("save").onclick = () => {
+
+  alert("변경 내역이 저장되었습니다.");
+
+}
+document.getElementById("exit").onclick = () => {
+
+  let result;
+  if(confirm("수강 희망 과목에 대한 수강 실패 시, "
+          +"부족한 학점에 대해 수강 가능 과목을 랜덤으로 신청하시겠습니까?")){
+            alert("수강 랜덤 신청 기능이 활성화 되었습니다.");
+          } else {
+            alert("수강 랜덤 신청 기능이 비활성화 되었습니다.")
+          }
+  window.location.href="./login.html";
+
+
 }
