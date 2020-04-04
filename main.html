@@ -41,6 +41,12 @@
 
       <h3>수강 희망 목록</h3>
 
+      <div class="buttonArea">
+        <form>
+          <input id="timeTableButton" type="button" value="시간표 보기">
+        </form>
+      <div>
+
       <div class="contentArea">
         <table id="tblWish">
           <tr>
@@ -52,10 +58,9 @@
 
       <div class="buttonArea">
         <form>
-          <input id="removeButton" type="button" value="목록에서 제거">
-          <input id="timeTableButton" type="button" value="시간표 보기">
           <input id="upButton" type="button" value="위">
           <input id="downButton" type="button" value="아래">
+          <input id="removeButton" type="button" value="목록에서 제거">
         </form>
       <div>
     </section>
@@ -207,22 +212,28 @@
 
     <section>
 
-      <div class="contentArea">
-            <h6>학습 목표</h6>
-            <p id="plan">이 과목에서는...</p>
-            <h6>평가</h6>
-            <p id="evaluation"></p>
-      </div>
       <div class="buttonArea">
         <form>
           <input id="applyButton" type="button" value="신청">
         </form>
       </div>
 
+      <div class="contentArea">
+            <h6>학습 목표</h6>
+            <p id="plan">이 과목에서는...</p>
+            <h6>평가</h6>
+            <p id="evaluation"></p>
+      </div>
+
     </section>
 
   </div>
-
+  <footer>
+    <form>
+      <input id="save" type="submit" value="저장">
+      <input id="exit" type="submit" value="나가기">
+    </form>
+  </footer>
   <script src="./active.js"></script>
 </body>
 </html>
