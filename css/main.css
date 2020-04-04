@@ -16,13 +16,12 @@ h3 {
 section{
   float : left;
 }
-section > div.contentArea{
+div.contentArea{
   background-color: rgba(255, 255, 255, 0.8);
   text-align: left;
   font-size:2vw;
   border: solid black 1px;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow: scroll;
 }
 div.buttonArea {
   float: left;
