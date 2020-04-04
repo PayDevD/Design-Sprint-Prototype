@@ -13,6 +13,9 @@ header{
 h3 {
   text-align: center;
 }
+section{
+  float : left;
+}
 section > div.contentArea{
   background-color: rgba(255, 255, 255, 0.8);
   text-align: left;
@@ -20,7 +23,6 @@ section > div.contentArea{
   border: solid black 1px;
   overflow-x: auto;
   overflow-y: auto;
-  float : left;
 }
 div.buttonArea {
   float: left;
