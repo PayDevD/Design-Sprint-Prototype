@@ -6,7 +6,7 @@
 }
 section {
   float : left;
-
+  text-align: center;
 }
 table{
   border: 1px solid black;
@@ -17,6 +17,6 @@ table{
 td {
   border : none;
   padding: 5px;
-  
+
   background-color: rgba(255, 255, 255, 0.8);
 }
